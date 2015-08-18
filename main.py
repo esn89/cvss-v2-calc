@@ -12,7 +12,7 @@ def run():
     print "\nCalculating Base Scores: "
     display.seperator()
     # args is arguments for my first class, BaseMetrics
-    args = ih.getbaseinput()
+    args, vectorstring = ih.getbaseinput()
     base = b.BaseMetrics(*args)
 
     display.title("base scores")
@@ -22,13 +22,15 @@ def run():
     basescore = base.calcbasescore()
     display.results("Base score", basescore)
     display.results("Overall", basescore)
+    # print "\n%s %s\n" % ("Vector String", vectorstring)
+    display.vstring(vectorstring)
 
     ih.prompt("Temporal")
 
     print "\nCalculating Temporal Score: "
     display.seperator()
     # tempargs is the arguments for the second class temporal Metrics
-    tempargs = ih.gettemporalinput()
+    tempargs, vectorstring = ih.gettemporalinput()
     temporal = t.TemporalMetrics(*tempargs)
 
     display.title("temporal scores")
@@ -42,13 +44,14 @@ def run():
     else:
         tempscore = basescore
         display.results("Overall", basescore)
+    display.vstring(vectorstring)
     display.seperator()
 
     ih.prompt("environmental scores")
 
     print "\nCalculating Environmental Scores: "
     display.seperator()
-    envargs = ih.getenvinput()
+    envargs, vectorstring = ih.getenvinput()
     environmental = e.EnvironmentalMetrics(*envargs)
 
     display.title("environmental scores")
@@ -70,6 +73,7 @@ def run():
         display.results("Overall", envscore)
     else:
         display.results("Overall", tempscore)
+    display.vstring(vectorstring)
     display.seperator()
 
 

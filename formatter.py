@@ -21,6 +21,20 @@ def results(statsname, number):
     print "%s %4.1f" % (statsname.ljust(OUTPUTWIDTH, '.'), number)
 
 
+def vstring(vectorstring):
+    """
+    Displays the vector string of the metric
+
+    Args:
+        vectorstring (str) : The string of the vector
+    """
+    print '\n'
+    # the + 15 is to make up for the offset of the words
+    # "Vector string: "
+    print ("Vector string: " + vectorstring.rjust(OUTPUTWIDTH -
+           len(vectorstring) + 15, '.'))
+
+
 def title(titlename):
     """
     Displays the title for the metric being calculated
