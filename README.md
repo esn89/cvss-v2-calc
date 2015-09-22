@@ -21,7 +21,3 @@ Dependencies
 Running
 -------
 Simply use it from the cloned folder via 'python main.py'
-
-Current Direction
------------------
-Working on a setup.py for easy tarballing and rpm packaging
